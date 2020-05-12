@@ -20,13 +20,15 @@ def convert_image_to_bw():
     og_image = str(window.og)
     while (flag==False):
         if len(result) != 0:   
-            print(og_image)
+            #print(og_image)
             im = PIL.Image.open(og_image)
             a = np.asarray(im)
             im = PIL.Image.fromarray(a)
             bw_img = im.convert('L')
             file_extension = og_image.split(".")[1]
-            saved_at = os.getcwd() + "\\" + result + "." + file_extension
+            index = og_image.rfind("/")
+            saved_directory = og_image[:index]
+            saved_at = saved_directory + "/"+ result + "_bw." + file_extension
             bw_img.save(saved_at)
             showinfo(title="Black-White", message= f"Image Successfully converted!\nSaved at: {saved_at}" )
             exit()
