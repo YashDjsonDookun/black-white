@@ -21,7 +21,6 @@ def convert_image_to_bw():
     og_image = str(window.og)
     while (flag==False):
         if len(result) != 0:   
-            #print(og_image)
             im = PIL.Image.open(og_image)
             a = np.asarray(im)
             im = PIL.Image.fromarray(a)
@@ -41,7 +40,6 @@ def convert_image_to_bw():
 # function responsible original image selection
 def browsefunc():
     window.og = filedialog.askopenfilename(filetypes=(("jpeg files","*.jpg"),("png file", ".png"),("All files","*.*")))
-    #print(window.og)
     return window.og
 
 # GUI Properties
