@@ -14,6 +14,7 @@ window.title('Black-White')
 window.geometry('500x100')
 window.og = ""
 
+# function responsible for image conversion
 def convert_image_to_bw():
     flag = False
     result = r.get()
@@ -37,11 +38,13 @@ def convert_image_to_bw():
             showerror(title="Beeepop!",message="Please give an output name!")
             flag = True
 
+# function responsible original image selection
 def browsefunc():
     window.og = filedialog.askopenfilename(filetypes=(("jpeg files","*.jpg"),("png file", ".png"),("All files","*.*")))
     #print(window.og)
     return window.og
 
+# GUI Properties
 b1=ttk.Button(window,text="Choose Image",command=browsefunc)
 b1.grid(row=0,column=1)
 
@@ -56,4 +59,5 @@ r.grid(row=1,column=1)
 button = ttk.Button(window, text="Convert", command=convert_image_to_bw)
 button.grid(row=2, column=0, columnspan=2)
 
+# Starts the GUI
 window.mainloop()
