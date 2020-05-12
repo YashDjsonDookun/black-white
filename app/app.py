@@ -37,7 +37,7 @@ def convert_image_to_bw():
             showerror(title="Beeepop!",message="Please give an output name!")
             flag = True
 
-# function responsible original image selection
+# function responsible for original image selection
 def browsefunc():
     window.og = filedialog.askopenfilename(filetypes=(("jpeg files","*.jpg"),("png file", ".png"),("All files","*.*")))
     return window.og
